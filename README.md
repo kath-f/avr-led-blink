@@ -8,5 +8,5 @@ If you're not using an arduino like me you might want to change some settings in
 
 So erm yurp.
 
-![LED Blink Schematic] (led_blink.svg)
+![LED Blink Schematic](led_blink.svg)
 
