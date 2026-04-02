@@ -9,12 +9,12 @@
 #define SET_OUTPUT(PORT, PIN) (SET_HIGH(PORT, PIN))
 #define SET_INPUT(PORT, PIN)  (SET_LOW(PORT, PIN))
 
+#define TIMER_PRELOAD (65536 - (F_CPU/1024))
 //this is like the effective 0 of the counter, 
 //because with the prescaler the timer is ticking at F_CPU/1024 hz effectively (its like 15k or something)
 //and we want the interrupt to be triggered every second, but it still is only triggered when there's an overflow (16 bit max num = 65536)
-//so by setting it back this amount we can ensure that it will be 1 second by the time the interrupt gets triggered
-
-#define TIMER_PRELOAD (65536 - (F_CPU/1024))
+//so by setting it back this amount we can ensure that it will be 1 second by the time the interrupt gets triggered since
+//since it steps at 15k steps a second, we need to set it back 15k to get one second
 
 #define LED_PIN PB5
 
